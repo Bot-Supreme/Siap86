@@ -6,11 +6,6 @@ const CACHE_NAME = 'gang-joker-digital-v1';
 const ASSETS = [
   './index.html',
   './manifest.json',
-  './lumbung-pangan/index.html',
-  './lumbung-pangan/LP-Ultima.html',
-  './lumbung-pangan/logo-lumbung-pangan.png',
-  './kas-gang/index.html',
-  './kas-gang/Kas.html',
   './icons/icon-192.png',
   './icons/icon-512.png'
 ];
