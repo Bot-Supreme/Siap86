@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>Gang Joker Digital — RT 001/RW 014 Sukadami</title>
+<!-- ADDITIF: PWA -->
+<link rel="manifest" href="./manifest.json">
+<meta name="theme-color" content="#1e3570">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;600;700;800;900&display=swap');
+
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+
+  :root {
+    --navy:        #1e3570;
+    --navy-light:  #2d4a8a;
+    --cream:       #f7f4ec;
+    --wheat:       #b9842c;
+    --wheat-dark:  #8c6320;
+    --joker-red:   #a8362c;
+    --joker-gold:  #c89a2e;
+    --ink:         #1b2440;
+    --muted:       #6b7488;
+  }
+
+  html, body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-light) 55%, #3a5aa3 100%);
+    font-family: 'Nunito', sans-serif;
+    color: var(--ink);
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 18px 24px;
+  }
+
+  /* ── Header ───────────────────────────── */
+  .eyebrow {
+    color: rgba(255,255,255,.62);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .wordmark {
+    font-family: 'Bangers', cursive;
+    font-size: 38px;
+    letter-spacing: .03em;
+    color: #fff;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 3px 0 rgba(0,0,0,.18);
+  }
+
+  .wordmark .suit {
+    font-size: 26px;
+    color: var(--joker-gold);
+    transform: translateY(-2px);
+  }
+
+  .tagline {
+    margin-top: 10px;
+    color: rgba(255,255,255,.85);
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .address {
+    margin-top: 4px;
+    color: rgba(255,255,255,.55);
+    font-size: 12.5px;
+    text-align: center;
+  }
+
+  /* ── Cards ────────────────────────────── */
+  .stack {
+    width: 100%;
+    max-width: 420px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    position: relative;
+    background: var(--cream);
+    border-radius: 18px;
+    padding: 20px 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink);
+    box-shadow: 0 10px 24px rgba(15,25,60,.28);
+    border: 1px solid rgba(255,255,255,.4);
+    overflow: hidden;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+
+  .card:active {
+    transform: scale(.97);
+    box-shadow: 0 4px 12px rgba(15,25,60,.24);
+  }
+
+  .card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 6px;
+  }
+
+  .card.pangan::before { background: var(--wheat); }
+  .card.kas::before    { background: var(--joker-red); }
+
+  .icon-wrap {
+    flex: 0 0 auto;
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card.pangan .icon-wrap { background: rgba(185,132,44,.14); }
+  .card.kas .icon-wrap    { background: rgba(168,54,44,.12); }
+
+  .icon-wrap svg { width: 28px; height: 28px; }
+
+  .card-body { flex: 1 1 auto; min-width: 0; }
+
+  .card-title {
+    font-size: 16.5px;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .card-desc {
+    margin-top: 2px;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-weight: 600;
+    line-height: 1.35;
+  }
+
+  .chevron {
+    flex: 0 0 auto;
+    color: var(--muted);
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  /* ── Footer ───────────────────────────── */
+  .footer {
+    margin-top: 34px;
+    text-align: center;
+  }
+
+  .footer-line {
+    color: rgba(255,255,255,.45);
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+  }
+
+  @media (max-width: 360px) {
+    .wordmark { font-size: 32px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="eyebrow">Sistem Digital Komunitas</div>
+  <div class="wordmark"><span class="suit">♠</span>Gang Joker Digital</div>
+  <div class="tagline">Dasbor administrasi RT 001 / RW 014</div>
+  <div class="address">Sukadami, Cikarang Selatan</div>
+
+  <div class="stack">
+
+    <a class="card pangan" href="./lumbung-pangan/index.html">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#8c6320" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 21c0-6 0-11 0-16"/>
+          <path d="M12 9c0-3 2.5-4.5 5-4.5C17 7.5 14.5 9 12 9Z"/>
+          <path d="M12 13c0-3-2.5-4.5-5-4.5C7 11.5 9.5 13 12 13Z"/>
+          <path d="M12 17c0-3 2.5-4.5 5-4.5C17 15.5 14.5 17 12 17Z"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Lumbung Pangan Ulti</div>
+        <div class="card-desc">Keuangan &amp; distribusi bantuan pangan</div>
+      </div>
+      <div class="chevron">›</div>
+    </a>
+
+    <a class="card kas" href="./kas-gang/index.html">
+      <div class="icon-wrap">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a8362c" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="6" width="18" height="13" rx="2.2"/>
+          <path d="M3 10h18"/>
+          <circle cx="7" cy="14.5" r="1.4" fill="#a8362c" stroke="none"/>
+          <path d="M12 14.5h6"/>
+        </svg>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Kas Gang Joker</div>
+        <div class="card-desc">Iuran Kas Gang, Kas RT &amp; Wifi</div>
+      </div>
+      <div class="chevron">›</div>
+    </a>
+
+  </div>
+
+  <div class="footer">
+    <div class="footer-line">RT 001 / RW 014 · Sukadami · Cikarang Selatan</div>
+  </div>
+  <!-- ADDITIF: Daftarkan Service Worker untuk dukungan offline (PWA) -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+
+</body>
+</html>
